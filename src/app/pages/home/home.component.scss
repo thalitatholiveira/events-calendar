@@ -1,0 +1,17 @@
+.home {
+  background-color: lightgreen;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+
+  &__title-container {
+    background-color: greenyellow;
+    width: 80%;
+  }
+
+  &__btn-container {
+    background-color: limegreen;
+  }
+}
