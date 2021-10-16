@@ -1,31 +1,53 @@
 <section class="central-container">
   <div class="data-container">
-    <label for="name">Primeiro nome</label>
-    <input type="text">
-    <label for="surname">Último nome</label>
-    <input type="text">
-    <label for="birth">Data de nascimento</label>
-    <input type="text">
-    <label for="gender">Gênero</label>
-    <select name="" id="">
-      <option value="female">Feminino</option>
-      <option value="male">Masculino</option>
-      <option value="other">Outro</option>
-    </select>
-    <label for="email">E-mail</label>
-    <input type="email" name="" id="">
-    <label for="password">Senha</label>
-    <input type="password" name="" id="">
-    <label for="password">Repetir senha</label>
-    <input type="password" name="" id="">
-  </div>
-  
-  <div class="btn-container">
-    <a routerLink="/home">
-      Voltar
-    </a>
-    <a routerLink="/events">
-      Confirmar
-    </a>
+    <h1 class="data-container__title">Cadastre-se!</h1>
+
+    <div class="data-container__input">
+      <div class="small-input">
+        <div class="small-input__box">
+          <label for="name">Primeiro nome</label>
+          <input type="text" class="input">
+        </div>
+        
+        <div class="small-input__box">
+          <label for="surname">Último nome</label>
+          <input type="text" class="input">
+        </div>
+      </div>
+
+      <div class="small-input">
+        <div class="small-input__box">
+          <label for="birth">Data de nascimento</label>
+          <input type="text" class="input">
+        </div>
+
+        <div class="small-input__box">
+          <label for="gender">Gênero</label>
+          <select name="" id="" class="input">
+            <option value="female">Feminino</option>
+            <option value="male">Masculino</option>
+            <option value="other">Outro</option>
+          </select>
+        </div>
+      </div>
+
+      <label for="email">E-mail</label>
+      <input type="email" name="" id="" class="input">
+
+      <label for="password">Senha</label>
+      <input type="password" name="" id="" class="input">
+
+      <label for="password">Repetir senha</label>
+      <input type="password" name="" id="" class="input">
+    </div>
+
+    <div class="btn-container">
+      <a routerLink="/home">
+        Voltar
+      </a>
+      <a routerLink="/events">
+        Confirmar
+      </a>
+    </div>
   </div>
 </section>

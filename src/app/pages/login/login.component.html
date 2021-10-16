@@ -1,23 +1,22 @@
 <section class="central-container">
-  <h1>
-    Fazer login
-  </h1>
-
   <div class="data-container">
-    <label for="email">E-mail</label>
-    <input type="text">
+    <h1 class="data-container__title">Seja bem-vindo(a)!</h1>
 
-    <label for="password">Senha</label>
-    <input type="password">
+    <div class="data-container__input">
+      <label for="email">E-mail</label>
+      <input type="text" class="input">
+
+      <label for="password">Senha</label>
+      <input type="password" class="input">
+    </div>
+
+    <div class="btn-container">
+      <a routerLink="/home">
+        Voltar
+      </a>
+      <a routerLink="/events">
+        Confirmar
+      </a>
+    </div>
   </div>
-
-  <div class="btn-container">
-    <a routerLink="/home">
-      Voltar
-    </a>
-    <a routerLink="/events">
-      Entrar
-    </a>
-  </div>
-
 </section>
