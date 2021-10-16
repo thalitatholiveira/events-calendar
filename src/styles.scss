@@ -21,4 +21,7 @@
 
 .btn-container {
   background-color: limegreen;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
 }
