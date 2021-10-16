@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-
 @Component({
   selector: 'app-events',
   templateUrl: './events.component.html',
@@ -7,18 +6,34 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EventsComponent implements OnInit {
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
   toggle = false;
 
-  openNewEvent() {
+  eventList = [];
+
+  newEvent = {
+    title: undefined,
+    description: undefined,
+    date: undefined,
+    start: undefined,
+    end: undefined,
+  }
+
+  constructor() {}
+
+  ngOnInit() {
+  }
+
+  openPopUp() {
     this.toggle = true;
   }
 
-  closeNewEvent() {
+  closePopUp() {
+    this.toggle = false;
+  }
+
+  submitNewEvent(event) {
+    this.eventList.push(event);
+    console.log(this.eventList);
     this.toggle = false;
   }
 }
