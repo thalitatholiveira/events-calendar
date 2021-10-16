@@ -31,9 +31,19 @@ export class EventsComponent implements OnInit {
     this.toggle = false;
   }
 
+  formReset() {
+    this.newEvent.title = undefined;
+    this.newEvent.description = undefined;
+    this.newEvent.date = undefined;
+    this.newEvent.start = undefined;
+    this.newEvent.end = undefined;
+  }
+
   submitNewEvent(event) {
     const eventCopy = {...event}
     this.eventList.push(eventCopy);
     this.toggle = false;
+
+    this.formReset();
   }
 }
