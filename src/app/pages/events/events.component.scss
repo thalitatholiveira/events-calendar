@@ -1,4 +1,4 @@
-.events-list {
+.event-container {
   background-color: mediumseagreen;
   display: flex;
   flex-direction: column;
@@ -7,6 +7,10 @@
 
   width: 40%;
   height: 30%;
+
+  &__item {
+    background-color: rgba(240, 255, 240, 0.322);
+  }
 }
 
 .popup-container {

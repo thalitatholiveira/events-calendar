@@ -1,9 +1,15 @@
 <section class="central-container">
   <h1>Meu calendário</h1>
 
-  <div class="events-list">
-    <div class="events-list" *ngFor="let item of eventList; index as i">
-      <p>{{ item.title }}, {{ item.description }}, {{ item.date }}, {{ item.start }}, {{ item.end }}</p>
+  <div class="event-container">
+    <!-- <p>Você não tem nenhum evento!</p> -->
+    <div class="event-container__item" *ngFor="let item of eventList; index as i">
+      <p>{{ item.date }} | {{ item.start }} - {{ item.end }}</p>
+      <p>{{ item.title }}</p>
+      <p>{{ item.description }}</p>
+
+      <button (click)="editEvent()">Editar</button>
+      <button (click)="deleteEvent()">Excluir</button>
     </div>
   </div>
 

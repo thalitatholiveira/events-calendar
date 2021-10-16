@@ -46,4 +46,12 @@ export class EventsComponent implements OnInit {
 
     this.formReset();
   }
+
+  editEvent() {
+    alert('Edit works!')
+  }
+
+  deleteEvent() {
+    alert('Delete works!')
+  }
 }
