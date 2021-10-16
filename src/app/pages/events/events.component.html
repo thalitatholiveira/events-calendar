@@ -2,13 +2,15 @@
   <h1>Meu calendário</h1>
 
   <div class="events-list">
-    <p>Você não possui eventos!</p>
+    <div class="events-list" *ngFor="let item of eventList; index as i">
+      <p>{{ item.title }}, {{ item.description }}, {{ item.date }}, {{ item.start }}, {{ item.end }}</p>
+    </div>
   </div>
 
   <button (click)="openPopUp()">Adicionar evento</button>
   <a routerLink="/home">Sair</a>
 
-  <div class="events-description" *ngIf="toggle">
+  <div class="popup-container" *ngIf="toggle">
     <h1>Novo evento</h1>
 
     <label for="title">Título do evento</label>

@@ -32,8 +32,8 @@ export class EventsComponent implements OnInit {
   }
 
   submitNewEvent(event) {
-    this.eventList.push(event);
-    console.log(this.eventList);
+    const eventCopy = {...event}
+    this.eventList.push(eventCopy);
     this.toggle = false;
   }
 }
