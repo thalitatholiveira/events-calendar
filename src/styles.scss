@@ -1,1 +1,24 @@
 @import url(reset.scss);
+
+.central-container {
+  background-color: lightgreen;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.data-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: left;
+  text-align: left;
+  background-color: limegreen;
+}
+
+.btn-container {
+  background-color: limegreen;
+}
