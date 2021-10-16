@@ -12,4 +12,13 @@ export class EventsComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  toggle = false;
+
+  openNewEvent() {
+    this.toggle = true;
+  }
+
+  closeNewEvent() {
+    this.toggle = false;
+  }
 }

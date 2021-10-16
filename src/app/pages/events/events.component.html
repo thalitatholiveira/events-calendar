@@ -5,6 +5,31 @@
     <p>Você não possui eventos!</p>
   </div>
 
-  <button>Adicionar evento</button>
+  <button (click)="openNewEvent()">Adicionar evento</button>
   <a routerLink="/home">Sair</a>
+
+  <div class="events-description" *ngIf="toggle">
+    <h1>Novo evento</h1>
+
+    <label for="title">Título do evento</label>
+    <input type="text">
+
+    <label for="description">Descrição</label>
+    <input type="text">
+
+    <label for="date">Data</label>
+    <input type="text">
+
+    <label for="time-start">Início às: </label>
+    <input type="time">
+
+    <label for="time-end">Término às:</label>
+    <input type="time" name="" id="">
+    
+    <div class="btn-container">
+      <button (click)="closeNewEvent()">Cancelar</button>
+      <button (click)="closeNewEvent()">Adicionar</button>
+    </div>
+  </div>
+
 </section>
