@@ -1,5 +1,5 @@
 <section class="central-container">
-  <h1>Meu calendário</h1>
+  <h1 class="title">Meu calendário</h1>
 
   <div class="event-container">
     <!-- <p>Você não tem nenhum evento!</p> -->
@@ -11,32 +11,39 @@
       <button (click)="editEvent()">Editar</button>
       <button (click)="deleteEvent()">Excluir</button>
     </div>
+
+    <button (click)="openPopUp()" class="btn">Criar evento</button>
   </div>
 
-  <button (click)="openPopUp()">Adicionar evento</button>
   <a routerLink="/home">Sair</a>
 
   <div class="popup-container" *ngIf="toggle">
-    <h1>Novo evento</h1>
+    <h1 class="title">Novo evento</h1>
 
     <label for="title">Título do evento</label>
-    <input type="text" [(ngModel)]="newEvent.title" maxlength="40">
+    <input type="text" [(ngModel)]="newEvent.title" maxlength="40" class="input">
 
     <label for="description">Descrição</label>
-    <input type="text" [(ngModel)]="newEvent.description" maxlength="120">
+    <input type="text" [(ngModel)]="newEvent.description" maxlength="120" class="input">
 
     <label for="date">Data</label>
-    <input type="text" [(ngModel)]="newEvent.date">
+    <input type="text" [(ngModel)]="newEvent.date" class="input">
 
-    <label for="time-start">Início às: </label>
-    <input type="text" [(ngModel)]="newEvent.start">
+    <div class="small-input">
+      <div class="small-input__box">
+        <label for="time-start">Início às: </label>
+        <input type="text" [(ngModel)]="newEvent.start" class="input">
+      </div>
 
-    <label for="time-end">Término às:</label>
-    <input type="text" name="" id="" [(ngModel)]="newEvent.end">
+      <div class="small-input__box">
+        <label for="time-end">Término às:</label>
+        <input type="text" name="" id="" [(ngModel)]="newEvent.end" class="input">
+      </div>
+    </div>
     
     <div class="btn-container">
-      <button (click)="closePopUp()">Cancelar</button>
-      <button (click)="submitNewEvent(newEvent)">Adicionar</button>
+      <button (click)="closePopUp()" class="btn">Cancelar</button>
+      <button (click)="submitNewEvent(newEvent)" class="btn">Adicionar</button>
     </div>
   </div>
 </section>
