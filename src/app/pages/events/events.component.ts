@@ -6,7 +6,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EventsComponent implements OnInit {
 
-  toggle = false;
+  toggle = {
+    createPopUp: false,
+    updatePopUp: false,
+  }
 
   eventList = [];
 
@@ -18,17 +21,29 @@ export class EventsComponent implements OnInit {
     end: undefined,
   }
 
+  itemToUpdate = {
+    item: undefined,
+    index: undefined,
+  }
+
   constructor() {}
 
   ngOnInit() {
   }
 
-  openPopUp() {
-    this.toggle = true;
+  openCreatePopUp() {
+    this.toggle.createPopUp = true;
+  }
+
+  openUpdatePopUp(item, i) {
+    this.toggle.updatePopUp = true;
+    this.itemToUpdate.item = item;
+    this.itemToUpdate.index = i;
   }
 
   closePopUp() {
-    this.toggle = false;
+    this.toggle.createPopUp = false;
+    this.toggle.updatePopUp = false;
   }
 
   formReset() {
@@ -42,13 +57,17 @@ export class EventsComponent implements OnInit {
   submitNewEvent(event) {
     const eventCopy = {...event}
     this.eventList.push(eventCopy);
-    this.toggle = false;
 
+    this.closePopUp();
     this.formReset();
   }
 
-  editEvent() {
-    alert('Edit works!')
+  updateEvent() {
+    this.eventList[this.itemToUpdate.index] = this.itemToUpdate.item;
+
+    alert('Updated!')
+
+    this.closePopUp();
   }
 
   deleteEvent() {

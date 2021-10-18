@@ -8,16 +8,17 @@
       <p>{{ item.title }}</p>
       <p>{{ item.description }}</p>
 
-      <button (click)="editEvent()">Editar</button>
+      <button (click)="openUpdatePopUp(item, i)">Editar</button>
       <button (click)="deleteEvent()">Excluir</button>
     </div>
 
-    <button (click)="openPopUp()" class="btn">Criar evento</button>
+    <button (click)="openCreatePopUp()" class="btn">Criar evento</button>
   </div>
 
   <a routerLink="/home">Sair</a>
 
-  <div class="popup-container" *ngIf="toggle">
+  <!-- Criar evento -->
+  <div class="popup-container" *ngIf="toggle.createPopUp">
     <h1 class="title">Novo evento</h1>
 
     <label for="title">Título do evento</label>
@@ -44,6 +45,37 @@
     <div class="btn-container">
       <button (click)="closePopUp()" class="btn">Cancelar</button>
       <button (click)="submitNewEvent(newEvent)" class="btn">Adicionar</button>
+    </div>
+  </div>
+
+  <!-- Editar evento -->
+  <div class="popup-container" *ngIf="toggle.updatePopUp">
+    <h1 class="title">Editar evento</h1>
+
+    <label for="title">Título do evento</label>
+    <input type="text" [(ngModel)]="itemToUpdate.item.title" maxlength="40" class="input">
+
+    <label for="description">Descrição do evento</label>
+    <input type="text" [(ngModel)]="itemToUpdate.item.description" maxlength="120" class="input">
+
+    <label for="date">Data</label>
+    <input type="text" [(ngModel)]="itemToUpdate.item.date" class="input" mask="00/00/0000" placeholder="DD/MM/AAAA">
+
+    <div class="small-input">
+      <div class="small-input__box">
+        <label for="time-start">Início às: </label>
+        <input type="text" [(ngModel)]="itemToUpdate.item.start" class="input" mask="00:00" placeholder="HH:MM">
+      </div>
+
+      <div class="small-input__box">
+        <label for="time-end">Término às:</label>
+        <input type="text" name="" id="" [(ngModel)]="itemToUpdate.item.end" class="input" mask="00:00" placeholder="HH:MM">
+      </div>
+    </div>
+    
+    <div class="btn-container">
+      <button (click)="closePopUp()" class="btn">Cancelar</button>
+      <button (click)="updateEvent()" class="btn">Confirmar</button>
     </div>
   </div>
 </section>
