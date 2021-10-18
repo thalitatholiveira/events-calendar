@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 export class EventsComponent implements OnInit {
 
   toggle = {
+    noEvents: true,
     createPopUp: false,
     updatePopUp: false,
   }
@@ -56,6 +57,7 @@ export class EventsComponent implements OnInit {
     const eventCopy = {...event}
     this.eventList.push(eventCopy);
 
+    this.toggle.noEvents = false;
     this.closePopUp();
     this.formReset();
   }
@@ -81,5 +83,9 @@ export class EventsComponent implements OnInit {
 
   deleteEvent(index) {
     this.eventList.splice(index, 1);
+
+    if (this.eventList.length == 0) {
+      this.toggle.noEvents = true;
+    }
   }
 }

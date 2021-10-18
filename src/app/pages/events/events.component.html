@@ -2,17 +2,26 @@
   <h1 class="title">Meu calendário</h1>
 
   <div class="event-container">
-    <!-- <p>Você não tem nenhum evento!</p> -->
-    <div class="event-container__item" *ngFor="let item of eventList; index as i">
-      <p>{{ item.date }} | {{ item.start }} - {{ item.end }}</p>
-      <p>{{ item.title }}</p>
-      <p>{{ item.description }}</p>
+    <button (click)="openCreatePopUp()" class="btn">+</button>
 
-      <button (click)="openUpdatePopUp(item, i)">Editar</button>
-      <button (click)="confirmDelete(i)">Excluir</button>
+    <div class="event-container__list">
+      <div *ngIf="toggle.noEvents" class="event-container__list__no-events">
+        Você não tem nenhum evento!
+      </div>
+
+      <div class="event-container__item" *ngFor="let item of eventList; index as i">
+        <div>
+          <p>{{ item.date }} | {{ item.start }} - {{ item.end }}</p>
+          <p>{{ item.title }}</p>
+          <p>{{ item.description }}</p>
+        </div>
+
+        <div class="event-container__item__btn">
+          <button (click)="openUpdatePopUp(item, i)">Editar</button>
+          <button (click)="confirmDelete(i)">Excluir</button>
+        </div>
+      </div>
     </div>
-
-    <button (click)="openCreatePopUp()" class="btn">Criar evento</button>
   </div>
 
   <a routerLink="/home">Sair</a>
