@@ -4,6 +4,7 @@
   <div class="event-container">
     <button (click)="openCreatePopUp()" class="btn">+</button>
 
+    <!-- Lista de eventos -->
     <div class="event-container__list">
       <div *ngIf="toggle.noEvents" class="event-container__list__no-events">
         Você não tem nenhum evento!
@@ -49,8 +50,17 @@
     
       <div class="btn-container">
         <button (click)="closePopUp()" class="btn">Cancelar</button>
-        <button (click)="submitNewEvent(newEvent)" class="btn">Adicionar</button>
+        <button (click)="createNewEvent(newEvent)" class="btn">Adicionar</button>
       </div>
+    </div>
+  </div>
+
+  <div class="blur-bg" *ngIf="toggle.newEventConfirmation">
+    <div class="confirmation-popup">
+      <p>Adicionado com sucesso!</p>
+      <button class="btn" (click)="closePopUp()">
+        OK
+      </button>
     </div>
   </div>
 
@@ -79,6 +89,15 @@
         <button (click)="closePopUp()" class="btn">Cancelar</button>
         <button (click)="updateEvent()" class="btn">Confirmar</button>
       </div>
+    </div>
+  </div>
+
+  <div class="blur-bg" *ngIf="toggle.updateEventConfirmation">
+    <div class="confirmation-popup">
+      <p>Atualizado com sucesso!</p>
+      <button class="btn" (click)="closePopUp()">
+        OK
+      </button>
     </div>
   </div>
 </section>

@@ -10,6 +10,8 @@ export class EventsComponent implements OnInit {
     noEvents: true,
     createPopUp: false,
     updatePopUp: false,
+    newEventConfirmation: false,
+    updateEventConfirmation: false,
   }
 
   eventList = [];
@@ -43,6 +45,8 @@ export class EventsComponent implements OnInit {
   closePopUp() {
     this.toggle.createPopUp = false;
     this.toggle.updatePopUp = false;
+    this.toggle.newEventConfirmation = false;
+    this.toggle.updateEventConfirmation = false;
   }
 
   formReset() {
@@ -53,13 +57,14 @@ export class EventsComponent implements OnInit {
     this.newEvent.end = undefined;
   }
 
-  submitNewEvent(event) {
+  createNewEvent(event) {
     const eventCopy = {...event}
     this.eventList.push(eventCopy);
 
-    this.toggle.noEvents = false;
     this.closePopUp();
     this.formReset();
+    this.toggle.noEvents = false;
+    this.toggle.newEventConfirmation = true;
   }
 
   openUpdatePopUp(item, i) {
@@ -71,9 +76,7 @@ export class EventsComponent implements OnInit {
   updateEvent() {
     this.eventList[this.itemToUpdate.index] = this.itemToUpdate.item;
 
-    alert('Updated!')
-
-    this.closePopUp();
+    this.toggle.updateEventConfirmation = true;
   }
 
   confirmDelete(index) {
