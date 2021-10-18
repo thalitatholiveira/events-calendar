@@ -58,6 +58,18 @@
   cursor: pointer;
 }
 
+.btn-2 {
+  background-color: rgba(255, 255, 255, 0);
+  border: 1px solid rgba(211, 211, 211, 0);
+  cursor: pointer;
+  border-radius: 2px;
+  padding: 2px;
+}
+
+.btn-2:hover {
+  border: 1px solid lightgray;
+}
+
 .btn-container {
   display: flex;
   flex-direction: row;

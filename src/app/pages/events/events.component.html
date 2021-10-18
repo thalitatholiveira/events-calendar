@@ -2,7 +2,9 @@
   <h1 class="title">Meu calendário</h1>
 
   <div class="event-container">
-    <button (click)="openCreatePopUp()" class="btn">+</button>
+    <button (click)="openCreatePopUp()" class="btn-2">
+      <img src="../../../assets/add-2.png" alt="Adicionar evento">
+    </button>
 
     <!-- Lista de eventos -->
     <div class="event-container__list">
@@ -18,8 +20,13 @@
         </div>
 
         <div class="event-container__item__btn">
-          <button (click)="openUpdatePopUp(item, i)">Editar</button>
-          <button (click)="confirmDelete(i)">Excluir</button>
+          <button (click)="openUpdatePopUp(item, i)" class="btn-2">
+            <img src="../../../assets/edit.png" alt="Editar">
+          </button>
+
+          <button (click)="confirmDelete(i)" class="btn-2">
+            <img src="../../../assets/delete.png" alt="Deletar">
+          </button>
         </div>
       </div>
     </div>
