@@ -13,13 +13,13 @@ export class LoginComponent implements OnInit {
     password: '',
   }
 
+  toggle = {
+    errorMessage: false,
+  }
+
   constructor(private router: Router) { }
 
   ngOnInit(): void {
-  }
-
-  toggle = {
-    errorMessage: false,
   }
 
   home() {
@@ -28,7 +28,7 @@ export class LoginComponent implements OnInit {
 
   login() {
     if (this.confirmLogin.email.length > 0 && this.confirmLogin.password.length > 0) {
-      this.router.navigate(['/events/'])
+      this.router.navigate(['/events/']);
     } else {
       this.toggle.errorMessage = true;
     }
