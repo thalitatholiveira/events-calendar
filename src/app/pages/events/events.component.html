@@ -23,21 +23,21 @@
     <label for="title">Título do evento</label>
     <input type="text" [(ngModel)]="newEvent.title" maxlength="40" class="input">
 
-    <label for="description">Descrição</label>
+    <label for="description">Descrição do evento</label>
     <input type="text" [(ngModel)]="newEvent.description" maxlength="120" class="input">
 
     <label for="date">Data</label>
-    <input type="text" [(ngModel)]="newEvent.date" class="input">
+    <input type="text" [(ngModel)]="newEvent.date" class="input" mask="00/00/0000" placeholder="DD/MM/AAAA">
 
     <div class="small-input">
       <div class="small-input__box">
         <label for="time-start">Início às: </label>
-        <input type="text" [(ngModel)]="newEvent.start" class="input">
+        <input type="text" [(ngModel)]="newEvent.start" class="input" mask="00:00" placeholder="HH:MM">
       </div>
 
       <div class="small-input__box">
         <label for="time-end">Término às:</label>
-        <input type="text" name="" id="" [(ngModel)]="newEvent.end" class="input">
+        <input type="text" name="" id="" [(ngModel)]="newEvent.end" class="input" mask="00:00" placeholder="HH:MM">
       </div>
     </div>
     
