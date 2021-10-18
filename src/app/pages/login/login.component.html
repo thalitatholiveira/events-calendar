@@ -4,19 +4,25 @@
 
     <div class="data-container__input">
       <label for="email">E-mail</label>
-      <input type="text" class="input">
+      <input type="text" class="input" [(ngModel)]="confirmLogin.email">
 
       <label for="password">Senha</label>
-      <input type="password" class="input">
+      <input type="password" class="input" [(ngModel)]="confirmLogin.password">
     </div>
 
     <div class="btn-container">
-      <a routerLink="/home" class="btn">
+      <button (click)="home()" class="btn">
         Voltar
-      </a>
-      <a routerLink="/events" class="btn">
+      </button>
+
+      <button (click)="login()" class="btn">
         Confirmar
-      </a>
+      </button>
     </div>
+  </div>
+
+  <div *ngIf="toggle.errorMessage" class="confirmation-popup">
+    <p>Para prosseguir, é necessário preencher e-mail e senha.</p>
+    <button (click)="closeErrorMessage()" class="btn">OK</button>
   </div>
 </section>
