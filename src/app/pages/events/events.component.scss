@@ -47,6 +47,19 @@
   align-self: flex-end;
 }
 
+.blur-bg {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  -webkit-backdrop-filter: blur(2px);
+  backdrop-filter: blur(2px);
+  background-color: rgba(254, 255, 173, 0.301);
+}
+
 .popup-container {
   display: flex;
   flex-direction: column;
@@ -60,5 +73,4 @@
   width: 30%;
   height: 70%;
   padding: 30px;
-  position: absolute;
 }
