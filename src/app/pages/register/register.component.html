@@ -6,24 +6,24 @@
       <div class="small-input">
         <div class="small-input__box">
           <label for="name">Primeiro nome</label>
-          <input type="text" class="input">
+          <input type="text" class="input" [(ngModel)]="confirmRegister.firstName">
         </div>
         
         <div class="small-input__box">
           <label for="surname">Último nome</label>
-          <input type="text" class="input">
+          <input type="text" class="input" [(ngModel)]="confirmRegister.lastName">
         </div>
       </div>
 
       <div class="small-input">
         <div class="small-input__box">
           <label for="birth">Data de nascimento</label>
-          <input type="text" class="input" mask="00/00/0000" placeholder="DD/MM/AAAA">
+          <input type="text" class="input" mask="00/00/0000" placeholder="DD/MM/AAAA" [(ngModel)]="confirmRegister.birth">
         </div>
 
         <div class="small-input__box">
           <label for="gender">Gênero</label>
-          <select name="" id="" class="input">
+          <select class="input" [(ngModel)]="confirmRegister.genre">
             <option value="female">Feminino</option>
             <option value="male">Masculino</option>
             <option value="other">Outro</option>
@@ -32,23 +32,28 @@
       </div>
 
       <label for="email">E-mail</label>
-      <input type="email" name="" id="" class="input" placeholder="example@example.com">
+      <input type="email" class="input" placeholder="example@example.com" [(ngModel)]="confirmRegister.email">
 
       <label for="password">Senha</label>
-      <input type="password" name="" id="" class="input">
+      <input type="password" class="input" [(ngModel)]="confirmRegister.password">
 
       <label for="password">Repetir senha</label>
-      <input type="password" name="" id="" class="input">
+      <input type="password" class="input" [(ngModel)]="confirmRegister.confirmationPassword">
     </div>
 
     <div class="btn-container">
-      <a routerLink="/home" class="btn">
+      <button class="btn" (click)="home()">
         Voltar
-      </a>
+      </button>
 
-      <a routerLink="/events" class="btn">
-        Confirmar
-      </a>
+      <button class="btn" (click)="register()">
+        Cadastrar
+      </button>
     </div>
+  </div>
+
+  <div *ngIf="toggle.errorMessage" class="confirmation-popup">
+    <p>Para prosseguir, é necessário preencher todos os campos do cadastro.</p>
+    <button (click)="closeErrorMessage()" class="btn">OK</button>
   </div>
 </section>
