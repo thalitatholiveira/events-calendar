@@ -95,11 +95,19 @@
   align-items: center;
   text-align: center;
   position: absolute;
-  width: 30vw;
-  height: 20vh;
-  padding: 30px;
+  padding: 15px;
+  max-width: 25vw;
+  line-height: 20px;
   background-color: white;
   border: 1px solid rgba(0, 0, 0, 0.295);
   border-radius: 10px;
   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.20);
+}
+
+.confirmation-popup > button {
+  margin-bottom: 10px;
+}
+
+.confirmation-popup > p {
+  margin: 10px;
 }
