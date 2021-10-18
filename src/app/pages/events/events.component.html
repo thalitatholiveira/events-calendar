@@ -9,7 +9,7 @@
       <p>{{ item.description }}</p>
 
       <button (click)="openUpdatePopUp(item, i)">Editar</button>
-      <button (click)="deleteEvent()">Excluir</button>
+      <button (click)="confirmDelete(i)">Excluir</button>
     </div>
 
     <button (click)="openCreatePopUp()" class="btn">Criar evento</button>

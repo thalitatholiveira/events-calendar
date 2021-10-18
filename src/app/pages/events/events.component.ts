@@ -26,6 +26,10 @@ export class EventsComponent implements OnInit {
     index: undefined,
   }
 
+  itemToDelete = {
+    index: undefined,
+  }
+
   constructor() {}
 
   ngOnInit() {
@@ -33,12 +37,6 @@ export class EventsComponent implements OnInit {
 
   openCreatePopUp() {
     this.toggle.createPopUp = true;
-  }
-
-  openUpdatePopUp(item, i) {
-    this.toggle.updatePopUp = true;
-    this.itemToUpdate.item = item;
-    this.itemToUpdate.index = i;
   }
 
   closePopUp() {
@@ -62,6 +60,12 @@ export class EventsComponent implements OnInit {
     this.formReset();
   }
 
+  openUpdatePopUp(item, i) {
+    this.toggle.updatePopUp = true;
+    this.itemToUpdate.item = item;
+    this.itemToUpdate.index = i;
+  }
+
   updateEvent() {
     this.eventList[this.itemToUpdate.index] = this.itemToUpdate.item;
 
@@ -70,7 +74,12 @@ export class EventsComponent implements OnInit {
     this.closePopUp();
   }
 
-  deleteEvent() {
-    alert('Delete works!')
+  confirmDelete(index) {
+    this.itemToDelete.index = index;
+    this.deleteEvent(this.itemToDelete.index);
+  }
+
+  deleteEvent(index) {
+    this.eventList.splice(index, 1);
   }
 }
