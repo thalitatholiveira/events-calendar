@@ -5,24 +5,24 @@
     <div class="data-container__input">
       <div class="small-input">
         <div class="small-input__box">
-          <label for="name">Primeiro nome</label>
+          <label for="name">Primeiro nome*</label>
           <input type="text" class="input" [(ngModel)]="confirmRegister.firstName">
         </div>
         
         <div class="small-input__box">
-          <label for="surname">Último nome</label>
+          <label for="surname">Último nome*</label>
           <input type="text" class="input" [(ngModel)]="confirmRegister.lastName">
         </div>
       </div>
 
       <div class="small-input">
         <div class="small-input__box">
-          <label for="birth">Data de nascimento</label>
+          <label for="birth">Data de nascimento*</label>
           <input type="text" class="input" mask="00/00/0000" placeholder="DD/MM/AAAA" [(ngModel)]="confirmRegister.birth">
         </div>
 
         <div class="small-input__box">
-          <label for="gender">Gênero</label>
+          <label for="gender">Gênero*</label>
           <select class="input" [(ngModel)]="confirmRegister.genre">
             <option value="female">Feminino</option>
             <option value="male">Masculino</option>
@@ -31,13 +31,13 @@
         </div>
       </div>
 
-      <label for="email">E-mail</label>
+      <label for="email">E-mail*</label>
       <input type="email" class="input" placeholder="example@example.com" [(ngModel)]="confirmRegister.email">
 
-      <label for="password">Senha</label>
+      <label for="password">Senha*</label>
       <input type="password" class="input" [(ngModel)]="confirmRegister.password">
 
-      <label for="password">Repetir senha</label>
+      <label for="password">Repetir senha*</label>
       <input type="password" class="input" [(ngModel)]="confirmRegister.confirmationPassword">
     </div>
 
