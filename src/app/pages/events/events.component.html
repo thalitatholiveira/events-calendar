@@ -84,16 +84,18 @@
       <label for="description">Descrição</label>
       <input type="text" [(ngModel)]="newEvent.description" maxlength="120" class="input">
 
-      <label for="date">Data*</label>
-      <input type="text" [(ngModel)]="newEvent.date" class="input" mask="00/00/0000" placeholder="DD/MM/AAAA">
+      <label for="date">Data (mês/dia/ano)*</label>
+      <input type="date" [(ngModel)]="newEvent.date" class="input" required>
+      
       <div class="small-input">
         <div class="small-input__box">
-          <label for="time-start">Início às:*</label>
-          <input type="text" [(ngModel)]="newEvent.start" class="input" mask="00:00" placeholder="HH:MM">
+          <label for="date">Início às: *</label>
+          <input type="time" class="small-input__input" [(ngModel)]="newEvent.start" required>
         </div>
+
         <div class="small-input__box">
-          <label for="time-end">Término às:*</label>
-          <input type="text" name="" id="" [(ngModel)]="newEvent.end" class="input" mask="00:00" placeholder="HH:MM">
+          <label for="date">Término às: *</label>
+          <input type="time" class="small-input__input" [(ngModel)]="newEvent.end" required>
         </div>
       </div>
     
@@ -130,16 +132,19 @@
       <input type="text" [(ngModel)]="itemToUpdate.item.title" maxlength="40" class="input">
       <label for="description">Descrição</label>
       <input type="text" [(ngModel)]="itemToUpdate.item.description" maxlength="120" class="input">
-      <label for="date">Data*</label>
-      <input type="text" [(ngModel)]="itemToUpdate.item.date" class="input" mask="00/00/0000" placeholder="DD/MM/AAAA">
+
+      <label for="date">Data (mês/dia/ano)*</label>
+      <input type="date" [(ngModel)]="itemToUpdate.item.date" class="input">
+      
       <div class="small-input">
         <div class="small-input__box">
-          <label for="time-start">Início às:*</label>
-          <input type="text" [(ngModel)]="itemToUpdate.item.start" class="input" mask="00:00" placeholder="HH:MM">
+          <label for="date">Início às: *</label>
+          <input type="time" class="input" [(ngModel)]="itemToUpdate.item.start">
         </div>
+
         <div class="small-input__box">
-          <label for="time-end">Término às:*</label>
-          <input type="text" name="" id="" [(ngModel)]="itemToUpdate.item.end" class="input" mask="00:00" placeholder="HH:MM">
+          <label for="date">Término às: *</label>
+          <input type="time" class="input" [(ngModel)]="itemToUpdate.item.end">
         </div>
       </div>
     

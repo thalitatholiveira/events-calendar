@@ -114,18 +114,36 @@
   margin: 5px 0px 20px 0px;
 }
 
+.input:focus {
+  border: 1px inset black;
+}
+
 .small-input {
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
+  text-align: center;
 
   &__box {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: flex-start;
-    width: 50%;
+    align-items: center;
+    // width: 50%;
+  }
+
+  &__input {
+  outline: none;
+  height: 30px;
+  border: 1px solid rgba(0, 0, 0, 0.486);
+  border-radius: 5px;
+  margin: 5px 0px 20px 0px;
+  width: 150px;
+  }
+
+  &__input:focus {
+    border: 1px inset black;
   }
 }
 
