@@ -39,11 +39,32 @@
             <img src="../../../assets/edit.png" alt="Editar">
           </button>
 
-          <button (click)="confirmDelete(i)" class="btn-2">
+          <button (click)="deleteConfirmation(i)" class="btn-2">
             <img src="../../../assets/delete.png" alt="Deletar">
           </button>
         </div>
       </div>
+    </div>
+  </div>
+
+  <div class="blur-bg" *ngIf="toggle.deleteConfirmation">
+    <div class="confirmation-popup">
+      <p>Deseja mesmo excluir esse evento?</p>
+      <div>
+        <button class="btn" (click)="closePopUp()">
+          Voltar
+        </button>
+        <button class="btn" (click)="deleteEvent(this.itemToDelete.index)">
+          Confirmar
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="blur-bg" *ngIf="toggle.deleteConfirmationMessage">
+    <div class="confirmation-popup">
+      <p>Excluído com sucesso!</p>
+      <button class="btn" (click)="closePopUp()">OK</button>
     </div>
   </div>
 

@@ -14,6 +14,8 @@ export class EventsComponent implements OnInit {
     updatePopUp: false,
     newEventConfirmation: false,
     updateEventConfirmation: false,
+    deleteConfirmation: false,
+    deleteConfirmationMessage: false,
     logoutConfirmation: false,
   }
 
@@ -50,6 +52,8 @@ export class EventsComponent implements OnInit {
     this.toggle.updatePopUp = false;
     this.toggle.newEventConfirmation = false;
     this.toggle.updateEventConfirmation = false;
+    this.toggle.deleteConfirmation = false;
+    this.toggle.deleteConfirmationMessage = false;
     this.toggle.logoutConfirmation = false;
   }
 
@@ -80,16 +84,21 @@ export class EventsComponent implements OnInit {
   updateEvent() {
     this.eventList[this.itemToUpdate.index] = this.itemToUpdate.item;
 
+    this.closePopUp();
+
     this.toggle.updateEventConfirmation = true;
   }
 
-  confirmDelete(index) {
+  deleteConfirmation(index) {
     this.itemToDelete.index = index;
-    this.deleteEvent(this.itemToDelete.index);
+    this.toggle.deleteConfirmation = true;
   }
 
   deleteEvent(index) {
     this.eventList.splice(index, 1);
+    
+    this.closePopUp()
+    this.toggle.deleteConfirmationMessage = true;
 
     if (this.eventList.length == 0) {
       this.toggle.noEvents = true;
