@@ -1,5 +1,6 @@
 @import url(reset.scss);
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
 
 * {
   font-family: 'Lato', sans-serif;
@@ -43,8 +44,33 @@
 
 .title {
   font-weight: bold;
-  font-size: 1.5em;
+  font-size: 5em;
   margin: 20px 0px 20px 0px;
+  color: white;
+  text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.50);
+}
+
+.title-2 {
+  font-size: 3em;
+  color: white;
+  font-family: 'Dancing Script', cursive;
+  margin: -26px;
+  font-weight: bold;
+  text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.50);
+}
+
+.title-3 {
+  font-size: 1.5em;
+  font-weight: bold;
+  color: black;
+}
+
+.title-4 {
+  font-family: 'Dancing Script', cursive;
+  font-size: 3em;
+  margin: 10px;
+  color: white;
+  text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.61);
 }
 
 .btn {
