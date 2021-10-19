@@ -1,15 +1,20 @@
 <section class="central-container">
-  <h1 class="title-4">Meu calendário</h1>
-
   <div class="event-container">
-    <button (click)="openCreatePopUp()" class="btn-2">
-      <img src="../../../assets/add.png" alt="Adicionar evento">
-    </button>
+    <div class="event-container__item__btn">
+      <button (click)="openCreatePopUp()" class="btn-2">
+        <img src="../../../assets/add.png" alt="Adicionar evento">
+      </button>
+      <button (click)="logout()" class="btn-2">
+        <img src="../../../assets/logout.png" alt="Logout">
+      </button>
+    </div>
 
     <!-- Lista de eventos -->
     <div class="event-container__list">
       <div *ngIf="toggle.noEvents" class="event-container__list__no-events">
-        Você não tem nenhum evento!
+        <p>Você não tem nenhum evento!</p>
+        <br>
+        <img src="../../../assets/calendar-100.png" alt="">
       </div>
 
       <div class="event-container__item" *ngFor="let item of eventList; index as i">
@@ -32,12 +37,10 @@
     </div>
   </div>
 
-  <a routerLink="/home">Sair</a>
-
   <!-- Criar evento -->
   <div class="blur-bg" *ngIf="toggle.createPopUp">
     <div class="popup-container">
-      <h1 class="title">Novo evento</h1>
+      <h1 class="title-3">Novo evento</h1>
       <label for="title">Título do evento</label>
       <input type="text" [(ngModel)]="newEvent.title" maxlength="40" class="input">
       <label for="description">Descrição do evento</label>
@@ -74,7 +77,7 @@
   <!-- Editar evento -->
   <div class="blur-bg" *ngIf="toggle.updatePopUp">
     <div class="popup-container">
-      <h1 class="title">Editar evento</h1>
+      <h1 class="title-3">Editar evento</h1>
       <label for="title">Título do evento</label>
       <input type="text" [(ngModel)]="itemToUpdate.item.title" maxlength="40" class="input">
       <label for="description">Descrição do evento</label>
