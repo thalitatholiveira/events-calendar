@@ -5,8 +5,14 @@
   font-family: 'Lato', sans-serif;
 }
 
+:root {
+  --old-pink: #B73C3F;
+  --transparent: rgba(255, 255, 255, 0);
+}
+
 .central-container {
-  background-color: rgb(254, 255, 173);
+  background-image: url(assets/background-2.jpg);
+  background-color: var(--old-pink);
   width: 100vw;
   height: 100vh;
   display: flex;
@@ -42,32 +48,31 @@
 }
 
 .btn {
-  background-color: goldenrod;
+  background-color: var(--transparent);
   text-decoration: none;
   color: black;
   font-size: 14px;
   margin: 0px 10px 0px 10px;
   padding: 15px 25px 15px 25px;
-  border: none;
+  border: 1px solid black;
   border-radius: 30px;
   height: fit-content;
 }
 
 .btn:hover {
-  background-color: rgb(180, 130, 2);
+  background-color: rgb(0, 0, 0);
+  color: white;
   cursor: pointer;
 }
 
 .btn-2 {
-  background-color: rgba(255, 255, 255, 0);
-  border: 1px solid rgba(211, 211, 211, 0);
-  cursor: pointer;
-  border-radius: 2px;
-  padding: 2px;
+  border: none;
+  background-color: var(--transparent);
 }
 
 .btn-2:hover {
-  border: 1px solid lightgray;
+  cursor: pointer;
+  filter: invert(100%);
 }
 
 .btn-container {
@@ -118,6 +123,13 @@
 
 .confirmation-popup > button {
   margin-bottom: 10px;
+  background-color: black;
+  color: white;
+}
+
+.confirmation-popup > button:hover {
+  background-color: var(--old-pink);
+  border: 1px solid var(--old-pink);
 }
 
 .confirmation-popup > p {

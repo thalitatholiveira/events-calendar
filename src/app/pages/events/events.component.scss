@@ -33,7 +33,7 @@
     justify-content: space-between;
     align-items: center;
     border-bottom: 1px solid rgba(0, 0, 0, 0.151);
-    margin: 5px;
+    margin: 15px;
     padding: 10px 0px 10px 0px;
 
     &__btn {
@@ -45,6 +45,7 @@
 
 .event-container > button {
   align-self: flex-end;
+  margin-right: 15px;
 }
 
 .blur-bg {
@@ -57,7 +58,7 @@
   position: absolute;
   -webkit-backdrop-filter: blur(2px);
   backdrop-filter: blur(2px);
-  background-color: rgba(254, 255, 173, 0.301);
+  background-color: rgba(0, 0, 0, 0.137);
 }
 
 .popup-container {
