@@ -29,9 +29,15 @@
 
       <div class="event-container__item" *ngFor="let item of eventList; index as i">
         <div>
-          <p>{{ item.date }} | {{ item.start }} - {{ item.end }}</p>
-          <p>{{ item.title }}</p>
-          <p>{{ item.description }}</p>
+
+          <h2 class="title-4">
+            {{ item.title }}
+          </h2>
+
+          <div class="description">
+            <p>{{ item.description }}</p>
+            <p>{{ item.date }} | {{ item.start }} às {{ item.end }}</p>
+          </div>
         </div>
 
         <div class="event-container__item__btn">
@@ -74,8 +80,10 @@
       <h1 class="title-3">Novo evento</h1>
       <label for="title">Título do evento*</label>
       <input type="text" [(ngModel)]="newEvent.title" maxlength="40" class="input">
+
       <label for="description">Descrição</label>
       <input type="text" [(ngModel)]="newEvent.description" maxlength="120" class="input">
+
       <label for="date">Data*</label>
       <input type="text" [(ngModel)]="newEvent.date" class="input" mask="00/00/0000" placeholder="DD/MM/AAAA">
       <div class="small-input">
