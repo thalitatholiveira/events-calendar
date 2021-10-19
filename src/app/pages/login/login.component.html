@@ -2,7 +2,7 @@
   <div class="data-container">
     <h1 class="title-3">Seja bem-vindo(a)!</h1>
 
-    <div class="data-container__input">
+    <div class="data-container__input-box">
       <label for="email">E-mail*</label>
       <input type="text" class="input" [(ngModel)]="confirmLogin.email">
 
@@ -21,8 +21,10 @@
     </div>
   </div>
 
-  <div *ngIf="toggle.errorMessage" class="confirmation-popup">
-    <p>Para prosseguir, é necessário preencher e-mail e senha.</p>
-    <button (click)="closeErrorMessage()" class="btn">OK</button>
+  <div class="blur-bg" *ngIf="toggle.errorMessage">
+    <div class="confirmation-popup">
+      <p>Para prosseguir, é necessário preencher e-mail e senha.</p>
+      <button (click)="closeErrorMessage()" class="btn">OK</button>
+    </div>
   </div>
 </section>

@@ -6,8 +6,8 @@
   align-items: center;
   border-radius: 10px;
 
-  width: 40%;
-  height: 80%;
+  width: 35em;
+  height: 30em;
 
   &__list {
     background-color: rgba(255, 255, 255, 0.322);
@@ -43,19 +43,6 @@
   }
 }
 
-.blur-bg {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 100vw;
-  height: 100vh;
-  position: absolute;
-  -webkit-backdrop-filter: blur(2px);
-  backdrop-filter: blur(2px);
-  background-color: rgba(0, 0, 0, 0.137);
-}
-
 .popup-container {
   display: flex;
   flex-direction: column;
@@ -66,8 +53,8 @@
   border-radius: 10px;
   border: 1px solid rgba(0, 0, 0, 0.295);
   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.20);
-  width: 30%;
-  height: 70%;
+  height: 25em;
+  width: 25em;
   padding: 30px;
 }
 

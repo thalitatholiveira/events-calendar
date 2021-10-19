@@ -2,28 +2,28 @@
   <div class="data-container">
     <h1 class="title-3">Cadastre-se!</h1>
 
-    <div class="data-container__input">
+    <div class="data-container__input-box">
       <div class="small-input">
         <div class="small-input__box">
           <label for="name">Primeiro nome*</label>
-          <input type="text" class="input" [(ngModel)]="confirmRegister.firstName">
+          <input type="text" class="small-input__box__input" [(ngModel)]="confirmRegister.firstName">
         </div>
         
         <div class="small-input__box">
           <label for="surname">Último nome*</label>
-          <input type="text" class="input" [(ngModel)]="confirmRegister.lastName">
+          <input type="text" class="small-input__box__input" [(ngModel)]="confirmRegister.lastName">
         </div>
       </div>
 
       <div class="small-input">
         <div class="small-input__box">
           <label for="birth">Data de nascimento*</label>
-          <input type="text" class="input" mask="00/00/0000" placeholder="DD/MM/AAAA" [(ngModel)]="confirmRegister.birth">
+          <input type="text" class="small-input__box__input" mask="00/00/0000" placeholder="DD/MM/AAAA" [(ngModel)]="confirmRegister.birth">
         </div>
 
         <div class="small-input__box">
           <label for="gender">Gênero*</label>
-          <select class="input" [(ngModel)]="confirmRegister.genre">
+          <select class="small-input__box__input" [(ngModel)]="confirmRegister.genre">
             <option value="female">Feminino</option>
             <option value="male">Masculino</option>
             <option value="other">Outro</option>
@@ -52,8 +52,10 @@
     </div>
   </div>
 
-  <div *ngIf="toggle.errorMessage" class="confirmation-popup">
-    <p>Para prosseguir, é necessário preencher todos os campos do cadastro.</p>
-    <button (click)="closeErrorMessage()" class="btn">OK</button>
+  <div class="blur-bg" *ngIf="toggle.errorMessage">
+    <div class="confirmation-popup">
+      <p>Para prosseguir, é necessário preencher todos os campos do cadastro.</p>
+      <button (click)="closeErrorMessage()" class="btn">OK</button>
+    </div>
   </div>
 </section>

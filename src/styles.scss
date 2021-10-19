@@ -28,18 +28,30 @@
   justify-content: space-around;
   align-items: center;
   background-color: rgb(255, 255, 255);
-  width: 25vw;
   height: 100vh;
+  width: 23em;
   padding: 20px;
 
-
-  &__input {
+  &__input-box {
     background-color: rgba(255, 255, 255, 0.363);
     display: flex;
     flex-direction: column;
     justify-content: center;
     width: 100%;
   }
+}
+
+.blur-bg {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  -webkit-backdrop-filter: blur(2px);
+  backdrop-filter: blur(2px);
+  background-color: rgba(0, 0, 0, 0.137);
 }
 
 .title {
@@ -103,6 +115,7 @@
   border: 1px solid rgba(0, 0, 0, 0.486);
   border-radius: 5px;
   margin: 5px 0px 20px 0px;
+  width: 100%;
 }
 
 .input:focus {
@@ -121,20 +134,15 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    // width: 50%;
-  }
 
-  &__input {
-  outline: none;
-  height: 30px;
-  border: 1px solid rgba(0, 0, 0, 0.486);
-  border-radius: 5px;
-  margin: 5px 0px 20px 0px;
-  width: 150px;
-  }
-
-  &__input:focus {
-    border: 1px inset black;
+    &__input {
+      outline: none;
+      height: 30px;
+      border: 1px solid rgba(0, 0, 0, 0.486);
+      border-radius: 5px;
+      margin: 5px 0px 20px 0px;
+      width: 12em;
+    }
   }
 }
 
@@ -146,12 +154,12 @@
   text-align: center;
   position: absolute;
   padding: 15px;
-  max-width: 25vw;
   line-height: 20px;
   background-color: white;
   border: 1px solid rgba(0, 0, 0, 0.295);
   border-radius: 10px;
   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.20);
+  width: 20em;
 }
 
 .confirmation-popup > button {

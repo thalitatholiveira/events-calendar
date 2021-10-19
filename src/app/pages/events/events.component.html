@@ -90,12 +90,12 @@
       <div class="small-input">
         <div class="small-input__box">
           <label for="date">Início às: *</label>
-          <input type="time" class="small-input__input" [(ngModel)]="newEvent.start" required>
+          <input type="time" class="small-input__box__input" [(ngModel)]="newEvent.start" required>
         </div>
 
         <div class="small-input__box">
           <label for="date">Término às: *</label>
-          <input type="time" class="small-input__input" [(ngModel)]="newEvent.end" required>
+          <input type="time" class="small-input__box__input" [(ngModel)]="newEvent.end" required>
         </div>
       </div>
     
@@ -139,12 +139,12 @@
       <div class="small-input">
         <div class="small-input__box">
           <label for="date">Início às: *</label>
-          <input type="time" class="input" [(ngModel)]="itemToUpdate.item.start">
+          <input type="time" class="small-input__box__input" [(ngModel)]="itemToUpdate.item.start">
         </div>
 
         <div class="small-input__box">
           <label for="date">Término às: *</label>
-          <input type="time" class="input" [(ngModel)]="itemToUpdate.item.end">
+          <input type="time" class="small-input__box__input" [(ngModel)]="itemToUpdate.item.end">
         </div>
       </div>
     
