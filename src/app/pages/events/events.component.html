@@ -94,6 +94,15 @@
         <button (click)="createNewEvent(newEvent)" class="btn">Adicionar</button>
       </div>
     </div>
+
+    <div class="blur-bg" *ngIf="toggle.errorMessage">
+      <div class="confirmation-popup">
+        <p>Para prosseguir, é necessário preencher os campos obrigatórios.</p>
+        <button class="btn" (click)="this.toggle.errorMessage = false">
+          OK
+        </button>
+      </div>
+    </div>
   </div>
 
   <div class="blur-bg" *ngIf="toggle.newEventConfirmation">

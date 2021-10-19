@@ -17,16 +17,17 @@ export class EventsComponent implements OnInit {
     deleteConfirmation: false,
     deleteConfirmationMessage: false,
     logoutConfirmation: false,
+    errorMessage: false,
   }
 
   eventList = [];
 
   newEvent = {
-    title: undefined,
-    description: undefined,
-    date: undefined,
-    start: undefined,
-    end: undefined,
+    title: '',
+    description: '',
+    date: '',
+    start: '',
+    end: '',
   }
 
   itemToUpdate = {
@@ -58,21 +59,38 @@ export class EventsComponent implements OnInit {
   }
 
   formReset() {
-    this.newEvent.title = undefined;
-    this.newEvent.description = undefined;
-    this.newEvent.date = undefined;
-    this.newEvent.start = undefined;
-    this.newEvent.end = undefined;
+    this.newEvent.title = '';
+    this.newEvent.description = '';
+    this.newEvent.date = '';
+    this.newEvent.start = '';
+    this.newEvent.end = '';
+  }
+
+  checkError() {
+    if (
+      this.newEvent.title.length > 0 && 
+      this.newEvent.date.length > 0 &&
+      this.newEvent.start.length > 0 &&
+      this.newEvent.end.length > 0
+      ) {
+      return false;
+    } else {
+      return true;
+    }
   }
 
   createNewEvent(event) {
-    const eventCopy = {...event}
-    this.eventList.push(eventCopy);
-
-    this.closePopUp();
-    this.formReset();
-    this.toggle.noEvents = false;
-    this.toggle.newEventConfirmation = true;
+    if (this.checkError()) {
+      this.toggle.errorMessage = true;
+    } else {
+      const eventCopy = {...event}
+      this.eventList.push(eventCopy);
+  
+      this.closePopUp();
+      this.formReset();
+      this.toggle.noEvents = false;
+      this.toggle.newEventConfirmation = true;
+    }
   }
 
   openUpdatePopUp(item, i) {
