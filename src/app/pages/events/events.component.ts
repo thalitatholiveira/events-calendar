@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+
 @Component({
   selector: 'app-events',
   templateUrl: './events.component.html',
@@ -12,6 +14,7 @@ export class EventsComponent implements OnInit {
     updatePopUp: false,
     newEventConfirmation: false,
     updateEventConfirmation: false,
+    logoutConfirmation: false,
   }
 
   eventList = [];
@@ -33,7 +36,7 @@ export class EventsComponent implements OnInit {
     index: undefined,
   }
 
-  constructor() {}
+  constructor(private router: Router) {}
 
   ngOnInit() {
   }
@@ -47,6 +50,7 @@ export class EventsComponent implements OnInit {
     this.toggle.updatePopUp = false;
     this.toggle.newEventConfirmation = false;
     this.toggle.updateEventConfirmation = false;
+    this.toggle.logoutConfirmation = false;
   }
 
   formReset() {
@@ -90,5 +94,13 @@ export class EventsComponent implements OnInit {
     if (this.eventList.length == 0) {
       this.toggle.noEvents = true;
     }
+  }
+
+  confirmLogout() {
+    this.toggle.logoutConfirmation = true;
+  }
+
+  logout() {
+    this.router.navigate(['/home/'])
   }
 }

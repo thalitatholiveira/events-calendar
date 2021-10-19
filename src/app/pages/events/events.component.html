@@ -4,9 +4,19 @@
       <button (click)="openCreatePopUp()" class="btn-2">
         <img src="../../../assets/add.png" alt="Adicionar evento">
       </button>
-      <button (click)="logout()" class="btn-2">
+      <button (click)="confirmLogout()" class="btn-2">
         <img src="../../../assets/logout.png" alt="Logout">
       </button>
+    </div>
+
+    <div class="blur-bg" *ngIf="toggle.logoutConfirmation">
+      <div class="confirmation-popup">
+        <p>Tem certeza que deseja sair?</p>
+        <div>
+          <button class="btn" (click)="closePopUp()">Voltar</button>
+          <button class="btn" (click)="logout()">Confirmar</button>
+        </div>
+      </div>
     </div>
 
     <!-- Lista de eventos -->
