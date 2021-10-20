@@ -125,7 +125,7 @@
 .small-input {
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: center;
   text-align: center;
 
@@ -141,7 +141,7 @@
       border: 1px solid rgba(0, 0, 0, 0.486);
       border-radius: 5px;
       margin: 5px 0px 20px 0px;
-      width: 12em;
+      width: 14em;
     }
   }
 }

@@ -25,9 +25,10 @@ export class EventsComponent implements OnInit {
   newEvent = {
     title: '',
     description: '',
-    date: '',
-    start: '',
-    end: '',
+    startDate: '',
+    endDate: '',
+    startTime: '',
+    endTime: '',
   }
 
   itemToUpdate = {
@@ -61,17 +62,19 @@ export class EventsComponent implements OnInit {
   formReset() {
     this.newEvent.title = '';
     this.newEvent.description = '';
-    this.newEvent.date = '';
-    this.newEvent.start = '';
-    this.newEvent.end = '';
+    this.newEvent.startDate = '';
+    this.newEvent.endDate = '';
+    this.newEvent.startTime = '';
+    this.newEvent.endTime = '';
   }
 
   checkError() {
     if (
       this.newEvent.title.length > 0 && 
-      this.newEvent.date.length > 0 &&
-      this.newEvent.start.length > 0 &&
-      this.newEvent.end.length > 0
+      this.newEvent.startDate.length > 0 &&
+      this.newEvent.endDate.length > 0 &&
+      this.newEvent.startTime.length > 0 &&
+      this.newEvent.endTime.length > 0
       ) {
       return false;
     } else {

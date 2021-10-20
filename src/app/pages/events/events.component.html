@@ -36,7 +36,7 @@
 
           <div class="description">
             <p>{{ item.description }}</p>
-            <p>{{ item.date }} | {{ item.start }} às {{ item.end }}</p>
+            <p>{{ item.startDate }} até {{ item.endDate }} | {{ item.startTime }} às {{ item.endTime }}</p>
           </div>
         </div>
 
@@ -84,18 +84,27 @@
       <label for="description">Descrição</label>
       <input type="text" [(ngModel)]="newEvent.description" maxlength="120" class="input">
 
-      <label for="date">Data (mês/dia/ano)*</label>
-      <input type="date" [(ngModel)]="newEvent.date" class="input" required>
-      
       <div class="small-input">
         <div class="small-input__box">
-          <label for="date">Início às: *</label>
-          <input type="time" class="small-input__box__input" [(ngModel)]="newEvent.start" required>
+          <label for="date">Data de início:*</label>
+          <input type="date" [(ngModel)]="newEvent.startDate" class="small-input__box__input" required>
         </div>
 
         <div class="small-input__box">
-          <label for="date">Término às: *</label>
-          <input type="time" class="small-input__box__input" [(ngModel)]="newEvent.end" required>
+          <label for="date">Data de fim:*</label>
+          <input type="date" [(ngModel)]="newEvent.endDate" class="small-input__box__input" required>
+        </div>
+      </div>
+      
+      <div class="small-input">
+        <div class="small-input__box">
+          <label for="date">Horário de início:*</label>
+          <input type="time" class="small-input__box__input" [(ngModel)]="newEvent.startTime" required>
+        </div>
+
+        <div class="small-input__box">
+          <label for="date">Horário de fim:*</label>
+          <input type="time" class="small-input__box__input" [(ngModel)]="newEvent.endTime" required>
         </div>
       </div>
     
@@ -133,17 +142,26 @@
       <label for="description">Descrição</label>
       <input type="text" [(ngModel)]="itemToUpdate.item.description" maxlength="120" class="input">
 
-      <label for="date">Data (mês/dia/ano)*</label>
-      <input type="date" [(ngModel)]="itemToUpdate.item.date" class="input">
+      <div class="small-input">
+        <div class="small-input__box">
+          <label for="date">Data de início:*</label>
+          <input type="date" [(ngModel)]="itemToUpdate.item.startDate" class="small-input__box__input" required>
+        </div>
+
+        <div class="small-input__box">
+          <label for="date">Data de fim:*</label>
+          <input type="date" [(ngModel)]="itemToUpdate.item.endDate" class="small-input__box__input" required>
+        </div>
+      </div>
       
       <div class="small-input">
         <div class="small-input__box">
-          <label for="date">Início às: *</label>
+          <label for="date">Horário de início:*</label>
           <input type="time" class="small-input__box__input" [(ngModel)]="itemToUpdate.item.start">
         </div>
 
         <div class="small-input__box">
-          <label for="date">Término às: *</label>
+          <label for="date">Horário de fim:*</label>
           <input type="time" class="small-input__box__input" [(ngModel)]="itemToUpdate.item.end">
         </div>
       </div>
