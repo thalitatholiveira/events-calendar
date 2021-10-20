@@ -31,6 +31,9 @@ body {
   align-items: center;
   background-color: rgb(255, 255, 255);
   height: 100vh;
+  min-height: 510px;
+  max-height: 700px;
+  border-radius: 5px;
   width: 23em;
   padding: 20px;
 
@@ -56,19 +59,11 @@ body {
   background-color: rgba(0, 0, 0, 0.137);
 }
 
-.title {
-  font-weight: bold;
-  font-size: 4em;
-  margin: 20px 0px 20px 0px;
-  color: white;
-  text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.50);
-}
-
 .title-3 {
   font-size: 1.5em;
   font-weight: bold;
   color: black;
-  margin: 10px 0px 10px 0px;
+  margin: 15px 0px 15px 0px;
 }
 
 .title-4 {
@@ -143,7 +138,7 @@ body {
       border: 1px solid rgba(0, 0, 0, 0.486);
       border-radius: 5px;
       margin: 5px 0px 20px 0px;
-      width: 14em;
+      width: 13em;
     }
   }
 }
@@ -177,4 +172,23 @@ body {
 
 .confirmation-popup > p {
   margin: 10px;
+}
+
+@media (min-width: 300px) and (max-width: 450px) {
+  .data-container {
+    width: 100vw;
+    height: 150vw;
+
+    &__input-box {
+      width: 80%;
+    }
+  }
+
+  .small-input {
+    &__box {
+      &__input {
+        width: 90%;
+      }
+    }
+  }
 }

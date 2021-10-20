@@ -47,7 +47,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  align-items: left;
+  align-items: stretch;
 
   background-color: white;
   border-radius: 10px;
@@ -61,4 +61,17 @@
 .description {
   font-size: .8em;
   line-height: 20px;
+}
+
+@media (min-width: 300px) and (max-width: 600px) {
+  .event-container {
+    width: 100vw;
+    height: 100vh;
+  }
+
+  .popup-container {
+    width: 85vw;
+    height: 100vh;
+    max-height: 600px;
+  }
 }
