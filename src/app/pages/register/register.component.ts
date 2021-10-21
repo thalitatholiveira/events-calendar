@@ -57,6 +57,6 @@ export class RegisterComponent implements OnInit {
   }
 
   closeRegister() {
-    this.router.navigate(['/home/']);
+    this.router.navigate(['/login/']);
   }
 }
