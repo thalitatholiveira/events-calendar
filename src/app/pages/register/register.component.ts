@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { UserService } from 'src/app/app/service/user.service';
 
 @Component({
   selector: 'app-register',
@@ -8,7 +9,7 @@ import { Router } from '@angular/router';
 })
 export class RegisterComponent implements OnInit {
 
-  confirmRegister = { 
+  register = { 
     firstName: '', 
     lastName: '',
     birth: '',
@@ -20,9 +21,10 @@ export class RegisterComponent implements OnInit {
 
   toggle = {
     errorMessage: false,
+    confirmRegister: false,
   }
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private userService: UserService) {  }
 
   ngOnInit(): void {
   }
@@ -31,17 +33,18 @@ export class RegisterComponent implements OnInit {
     this.router.navigate(['/home/'])
   }
 
-  register() {
+  newRegister() {
     if (
-      this.confirmRegister.firstName.length > 0 &&
-      this.confirmRegister.lastName.length > 0 &&
-      this.confirmRegister.birth.length > 0 &&
-      this.confirmRegister.genre.length > 0 &&
-      this.confirmRegister.email.length > 0 &&
-      this.confirmRegister.password.length > 0 &&
-      this.confirmRegister.confirmationPassword.length > 0      
+      this.register.firstName.length > 0 &&
+      this.register.lastName.length > 0 &&
+      this.register.birth.length > 0 &&
+      this.register.genre.length > 0 &&
+      this.register.email.length > 0 &&
+      this.register.password.length > 0 &&
+      this.register.confirmationPassword.length > 0      
       ) {
-        this.router.navigate(['/events/']);
+        this.toggle.confirmRegister = true;
+        this.userService.register = this.register;
       } else {
         this.toggle.errorMessage = true;
       }
@@ -49,5 +52,10 @@ export class RegisterComponent implements OnInit {
 
   closeErrorMessage() {
     this.toggle.errorMessage = false;
+    this.toggle.confirmRegister = false;
+  }
+
+  closeRegister() {
+    this.router.navigate(['/home/']);
   }
 }

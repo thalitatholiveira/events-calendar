@@ -6,24 +6,24 @@
       <div class="small-input">
         <div class="small-input__box">
           <label for="name">Primeiro nome*</label>
-          <input type="text" class="small-input__box__input" [(ngModel)]="confirmRegister.firstName">
+          <input type="text" class="small-input__box__input" [(ngModel)]="register.firstName">
         </div>
         
         <div class="small-input__box">
           <label for="surname">Último nome*</label>
-          <input type="text" class="small-input__box__input" [(ngModel)]="confirmRegister.lastName">
+          <input type="text" class="small-input__box__input" [(ngModel)]="register.lastName">
         </div>
       </div>
 
       <div class="small-input">
         <div class="small-input__box">
           <label for="birth">Data de nascimento*</label>
-          <input type="text" class="small-input__box__input" mask="00/00/0000" placeholder="DD/MM/AAAA" [(ngModel)]="confirmRegister.birth">
+          <input type="text" class="small-input__box__input" mask="00/00/0000" placeholder="DD/MM/AAAA" [(ngModel)]="register.birth">
         </div>
 
         <div class="small-input__box">
           <label for="gender">Gênero*</label>
-          <select class="small-input__box__input" [(ngModel)]="confirmRegister.genre">
+          <select class="small-input__box__input" [(ngModel)]="register.genre">
             <option value="female">Feminino</option>
             <option value="male">Masculino</option>
             <option value="other">Outro</option>
@@ -32,13 +32,13 @@
       </div>
 
       <label for="email">E-mail*</label>
-      <input type="email" class="input" placeholder="example@example.com" [(ngModel)]="confirmRegister.email">
+      <input type="email" class="input" placeholder="example@example.com" [(ngModel)]="register.email">
 
       <label for="password">Senha*</label>
-      <input type="password" class="input" [(ngModel)]="confirmRegister.password">
+      <input type="password" class="input" [(ngModel)]="register.password">
 
       <label for="password">Repetir senha*</label>
-      <input type="password" class="input" [(ngModel)]="confirmRegister.confirmationPassword">
+      <input type="password" class="input" [(ngModel)]="register.confirmationPassword">
     </div>
 
     <div class="btn-container">
@@ -46,7 +46,7 @@
         Voltar
       </button>
 
-      <button class="btn" (click)="register()">
+      <button class="btn" (click)="newRegister()">
         Cadastrar
       </button>
     </div>
@@ -56,6 +56,13 @@
     <div class="confirmation-popup">
       <p>Para prosseguir, é necessário preencher todos os campos do cadastro.</p>
       <button (click)="closeErrorMessage()" class="btn">OK</button>
+    </div>
+  </div>
+
+  <div class="blur-bg" *ngIf="toggle.confirmRegister">
+    <div class="confirmation-popup">
+      <p>Cadastro realizado com sucesso!</p>
+      <button (click)="closeRegister()" class="btn">OK</button>
     </div>
   </div>
 </section>

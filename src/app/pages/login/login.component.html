@@ -4,10 +4,10 @@
 
     <div class="data-container__input-box">
       <label for="email">E-mail*</label>
-      <input type="text" class="input" [(ngModel)]="confirmLogin.email">
+      <input type="text" class="input" [(ngModel)]="newLogin.email">
 
       <label for="password">Senha*</label>
-      <input type="password" class="input" [(ngModel)]="confirmLogin.password">
+      <input type="password" class="input" [(ngModel)]="newLogin.password">
     </div>
 
     <div class="btn-container">
@@ -18,6 +18,17 @@
       <button (click)="login()" class="btn">
         Confirmar
       </button>
+    </div>
+  </div>
+
+  <div class="blur-bg" *ngIf="toggle.noRegister">
+    <div class="confirmation-popup">
+      <p>Este e-mail não está cadastrado.</p>
+
+      <div class="btn-container">
+        <button (click)="closeErrorMessage()" class="btn">Voltar</button>
+        <button (click)="registerNow()" class="btn">Cadastrar</button>
+      </div>
     </div>
   </div>
 

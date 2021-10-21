@@ -8,7 +8,8 @@ import { RegisterComponent } from './pages/register/register.component';
 import { LoginComponent } from './pages/login/login.component';
 import { EventsComponent } from './pages/events/events.component';
 import { HomeComponent } from './pages/home/home.component';
-import { NgxMaskModule, IConfig } from 'ngx-mask'
+import { NgxMaskModule, IConfig } from 'ngx-mask';
+import { ServiceComponent } from './app/service/service.component'
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { NgxMaskModule, IConfig } from 'ngx-mask'
     LoginComponent,
     EventsComponent,
     HomeComponent,
+    ServiceComponent,
   ],
   imports: [
     BrowserModule,
