@@ -17,6 +17,7 @@ export class LoginComponent implements OnInit {
   toggle = {
     errorMessage: false,
     noRegister: false,
+    incorrectPassword: false,
   }
 
   constructor(private router: Router, private userService: UserService) { }
@@ -34,6 +35,11 @@ export class LoginComponent implements OnInit {
         this.newLogin.email == this.userService.register.email &&
         this.newLogin.password == this.userService.register.password) {
           this.router.navigate(['/events/'])
+      } else if (
+        this.newLogin.email == this.userService.register.email &&
+        this.newLogin.password != this.userService.register.password
+        ) {
+          this.toggle.incorrectPassword = true;
       } else {
         this.toggle.noRegister = true;
       }
@@ -49,5 +55,6 @@ export class LoginComponent implements OnInit {
   closeErrorMessage() {
     this.toggle.errorMessage = false;
     this.toggle.noRegister = false;
+    this.toggle.incorrectPassword = false;
   }
 }
