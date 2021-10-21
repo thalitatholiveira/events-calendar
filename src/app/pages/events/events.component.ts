@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { UserService } from 'src/app/app/service/user.service';
 
 @Component({
   selector: 'app-events',
@@ -40,7 +41,9 @@ export class EventsComponent implements OnInit {
     index: undefined,
   }
 
-  constructor(private router: Router) {}
+  userName = this.userService.register.firstName;
+
+  constructor(private router: Router, private userService: UserService) {}
 
   ngOnInit() {
   }
