@@ -37,7 +37,13 @@
       <label for="password">Senha*</label>
       <input type="password" class="input" [(ngModel)]="register.password">
 
-      <label for="password">Repetir senha*</label>
+      <label for="password">
+        Repetir senha*
+        <span style="color: red; font-size: .8em; font-weight: bold;" 
+        *ngIf="register.password != register.confirmationPassword && register.confirmationPassword.length > 0">
+          As senhas não são iguais.
+        </span>
+      </label>
       <input type="password" class="input" [(ngModel)]="register.confirmationPassword">
     </div>
 
@@ -54,7 +60,7 @@
 
   <div class="blur-bg" *ngIf="toggle.errorMessage">
     <div class="confirmation-popup">
-      <p>Para prosseguir, é necessário preencher todos os campos do cadastro.</p>
+      <p>Para prosseguir, é necessário preencher todos os campos. Tente novamente.</p>
       <button (click)="closeErrorMessage()" class="btn">OK</button>
     </div>
   </div>
