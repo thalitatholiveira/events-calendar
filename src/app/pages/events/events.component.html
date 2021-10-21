@@ -39,7 +39,14 @@
 
           <div class="description">
             <p>{{ item.description }}</p>
-            <p>{{ item.startDate }} até {{ item.endDate }} | {{ item.startTime }} às {{ item.endTime }}</p>
+            <p>
+              <img src="../../../assets/clock.png">
+              {{ item.startTime }} às {{ item.endTime }}
+            </p>
+
+            <p><img src="../../../assets/calendar-16.png">
+              {{ item.startDate }} até {{ item.endDate }}
+            </p>
           </div>
         </div>
 
