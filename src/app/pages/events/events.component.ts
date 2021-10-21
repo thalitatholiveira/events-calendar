@@ -41,7 +41,7 @@ export class EventsComponent implements OnInit {
     index: undefined,
   }
 
-  userName = this.userService.register.firstName;
+  userName = this.userService.register.firstName.trim();
 
   constructor(private router: Router, private userService: UserService) {}
 

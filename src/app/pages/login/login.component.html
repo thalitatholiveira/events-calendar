@@ -6,7 +6,14 @@
       <label for="email">E-mail*</label>
       <input type="text" class="input" [(ngModel)]="newLogin.email">
 
-      <label for="password">Senha*</label>
+      <label for="password">
+        Senha*
+        <span 
+        style="color: red; font-size: .8em; font-weight: bold;"
+        *ngIf="this.toggle.incorrectPassword">
+          Senha incorreta. Tente novamente.
+        </span>
+      </label>
       <input type="password" class="input" [(ngModel)]="newLogin.password">
     </div>
 
