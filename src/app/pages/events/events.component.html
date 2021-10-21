@@ -22,6 +22,9 @@
     <!-- Lista de eventos -->
     <div class="event-container__list">
       <div *ngIf="toggle.noEvents" class="event-container__list__no-events">
+        <p style="font-weight: bold; text-transform: capitalize;">
+          Olá, {{ userName }}!
+        </p>
         <p>Você não tem nenhum evento!</p>
         <br>
         <img src="../../../assets/calendar-100.png" alt="">

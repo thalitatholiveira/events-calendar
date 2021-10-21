@@ -41,7 +41,8 @@ export class RegisterComponent implements OnInit {
       this.register.genre.length > 0 &&
       this.register.email.length > 0 &&
       this.register.password.length > 0 &&
-      this.register.confirmationPassword.length > 0      
+      this.register.confirmationPassword.length > 0 &&
+      this.register.password === this.register.confirmationPassword     
       ) {
         this.toggle.confirmRegister = true;
         this.userService.register = this.register;
@@ -56,6 +57,6 @@ export class RegisterComponent implements OnInit {
   }
 
   closeRegister() {
-    this.router.navigate(['/home/']);
+    this.router.navigate(['/login/']);
   }
 }
